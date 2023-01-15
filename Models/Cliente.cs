@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SistemaVendas.Models
 {
-    public class Vendedor
+    public class Cliente
     {
         public int Id { get; set; }
         public string Nome { get; set; }
