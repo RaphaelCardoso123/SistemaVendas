@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SistemaVendas.Repository;
+using SistemaVendas.Dto;
+using SistemaVendas.Models;
 
 namespace SistemaVendas.Controllers
 {
@@ -15,6 +17,14 @@ namespace SistemaVendas.Controllers
         public VendedorController(VendedorRepository repository)
         {
             _repository = repository;
+        }
+        
+        [HttpPost]
+        public IActionResult Cadastrar(CadastrarVendedorDTO dto)
+        {
+            var vendedor = new Vendedor(dto);
+            _repository.Cadastrar(vendedor);
+            return Ok(vendedor);
         }
     }
 }
