@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SistemaVendas.Context;
 using SistemaVendas.Models;
+using SistemaVendas.Dto;
 
 namespace SistemaVendas.Repository
 {
@@ -25,6 +26,14 @@ namespace SistemaVendas.Repository
           {
             var vendedor = _context.Vendedores.Find(id);
             return vendedor;
+          }
+
+          public List<ObterVendedorDTO> ObterPorNome(string nome)
+          {
+            var vendedores = _context.Vendedores.Where(x => x.Nome.Contains(nome))
+                                                .Select(x => new ObterVendedorDTO(x))
+                                                .ToList();
+            return vendedores;
           }
 
     }
