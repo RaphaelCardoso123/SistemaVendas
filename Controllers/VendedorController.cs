@@ -40,7 +40,7 @@ namespace SistemaVendas.Controllers
                 return NotFound(new {Mensagem = "Vendedor não encontrado"});
         }
 
-        [HttpGet("ObterPorNome/nome}")]
+        [HttpGet("ObterPorNome/{nome}")]
         public IActionResult ObterPorNome(string nome)
         {
             var vendedores = _repository.ObterPorNome(nome);
