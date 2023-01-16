@@ -26,5 +26,15 @@ namespace SistemaVendas.Controllers
             _repository.Cadastrar(vendedor);
             return Ok(vendedor);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult ObterPorId(int id)
+        {
+            var vendedor = _repository.ObterPorId(id);
+            if (vendedor is not null)
+                return Ok(vendedor);
+            else
+                return NotFound(new {Mensagem = "Vendedor não encontrado"});
+        }
     }
 }
