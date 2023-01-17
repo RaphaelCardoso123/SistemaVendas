@@ -53,11 +53,13 @@ namespace SistemaVendas.Repository
             return vendedor;
           }
 
+
           public void DeletarVendedor(Vendedor vendedor)
           {
             _context.Vendedores.Remove(vendedor);
             _context.SaveChanges();
           }
+
 
           public void AtualizarSenha(Vendedor vendedor, AtualizarSenhaVendedorDTO dto)
           {
