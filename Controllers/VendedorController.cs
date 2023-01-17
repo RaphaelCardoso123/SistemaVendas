@@ -19,6 +19,7 @@ namespace SistemaVendas.Controllers
             _repository = repository;
         }
         
+
         [HttpPost]
         public IActionResult Cadastrar(CadastrarVendedorDTO dto)
         {
@@ -26,6 +27,7 @@ namespace SistemaVendas.Controllers
             _repository.Cadastrar(vendedor);
             return Ok(vendedor);
         }
+
 
         [HttpGet("{id}")]
         public IActionResult ObterPorId(int id)
@@ -40,12 +42,14 @@ namespace SistemaVendas.Controllers
                 return NotFound(new {Mensagem = "Vendedor não encontrado"});
         }
 
+
         [HttpGet("ObterPorNome/{nome}")]
         public IActionResult ObterPorNome(string nome)
         {
             var vendedores = _repository.ObterPorNome(nome);
             return Ok(vendedores);
         }
+
 
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, AtualizarVendedorDTO dto)
@@ -63,6 +67,7 @@ namespace SistemaVendas.Controllers
             }
         }
 
+
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
@@ -77,6 +82,7 @@ namespace SistemaVendas.Controllers
                 return NotFound(new {Mensagem = "Vendedor não encontrado"});
             }
         }
+
 
         [HttpPatch("{id}")]
         public IActionResult AtualizarSenha(int id, AtualizarSenhaVendedorDTO dto)
