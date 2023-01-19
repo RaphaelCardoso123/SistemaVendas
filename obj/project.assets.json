@@ -3864,19 +3864,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\raphael.cardoso\\.nuget\\packages\\": {}
+    "C:\\Users\\Rafael\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\raphael.cardoso\\Documents\\work_in_progress\\sistemaVendas-.NET\\SistemaVendas.csproj",
+      "projectUniqueName": "C:\\Users\\Rafael\\Documents\\Meus Projetos\\sistemaVendas-.NET\\SistemaVendas.csproj",
       "projectName": "SistemaVendas",
-      "projectPath": "C:\\Users\\raphael.cardoso\\Documents\\work_in_progress\\sistemaVendas-.NET\\SistemaVendas.csproj",
-      "packagesPath": "C:\\Users\\raphael.cardoso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\raphael.cardoso\\Documents\\work_in_progress\\sistemaVendas-.NET\\obj\\",
+      "projectPath": "C:\\Users\\Rafael\\Documents\\Meus Projetos\\sistemaVendas-.NET\\SistemaVendas.csproj",
+      "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rafael\\Documents\\Meus Projetos\\sistemaVendas-.NET\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\raphael.cardoso\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
