@@ -60,6 +60,21 @@ namespace sistemaVendas.Controllers
         }
 
 
+        [HttpGet("ObterPorVendedorid/{Vendedorid}")]
+        public IActionResult ObterPorVendedorId(int vendedorId)
+        {
+            var pedido = _repository.ObterPorVendedorId(vendedorId);
+            if (pedido is not null)
+            {
+                return Ok(pedido);
+            }
+            else
+            {
+                return NotFound(new {Mensagem = "Pedido não encontrado!"});
+            }
+        }
+
+
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, AtualizarPedidoDTO dto)
         {
