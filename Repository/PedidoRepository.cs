@@ -59,10 +59,14 @@ namespace SistemaVendas.Repository
             return pedido;
           }
 
-          public Pedido ObterPorVendedorId(int vendedorId)                                
+
+          public List<ObterPedidoDTO> ObterPorVendedorId(int id)
           {
-            var pedido = _context.Pedidos.Find(vendedorId);
-            return pedido;
-          }
+            var pedidos = _context.Pedidos.Where(x => x.VendedorId == id)
+                                          .Select(x => new ObterPedidoDTO(x))
+                                          .ToList();
+
+            return pedidos;
+        }
     }
 }
