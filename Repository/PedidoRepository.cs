@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using SistemaVendas.Context;
 using SistemaVendas.Models;
 using SistemaVendas.Dto;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace SistemaVendas.Repository
 {
@@ -27,7 +29,9 @@ namespace SistemaVendas.Repository
 
         public Pedido ObterPorId(int id)                                
           {
-            var pedido = _context.Pedidos.Find(id);
+            var pedido = _context.Pedidos.Include(x => x.Vendedor)
+                                         .Include(x => x.Cliente)
+                                         .FirstOrDefault(x => x.Id == id);
             return pedido;
           }
     }
