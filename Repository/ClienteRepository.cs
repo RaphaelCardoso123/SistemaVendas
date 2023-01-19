@@ -46,5 +46,19 @@ namespace SistemaVendas.Repository
 
             return cliente;
           }
+
+
+          public void DeletarCliente(Cliente cliente)
+          {
+            _context.Clientes.Remove(cliente);
+            _context.SaveChanges();
+          }
+
+
+          public void AtualizarSenha(Cliente cliente, AtualizarSenhaClienteDTO dto)
+          {
+            cliente.Senha = dto.Senha;
+            AtualizarCliente(cliente);
+          }
     }
 }
