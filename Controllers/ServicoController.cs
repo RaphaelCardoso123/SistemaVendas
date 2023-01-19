@@ -28,5 +28,12 @@ namespace SistemaVendas.Controllers
             return Ok(servico);
         }
 
+        [HttpGet("ObterPorNome/{nome}")]
+        public IActionResult ObterPorNome(string nome)
+        {
+            var servicos = _repository.ObterPorNome(nome);
+            return Ok(servicos);
+        }
+
     }
 }
