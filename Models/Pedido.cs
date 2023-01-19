@@ -21,6 +21,7 @@ namespace SistemaVendas.Models
 
         }
 
+
         public Pedido(CadastrarPedidoDTO dto)
         {
             Data = dto.Data;
