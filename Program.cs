@@ -9,6 +9,7 @@ builder.Services.AddDbContext<VendasContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao")));
 
 builder.Services.AddScoped<VendedorRepository>();
+builder.Services.AddScoped<ClienteRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
