@@ -60,7 +60,7 @@ namespace sistemaVendas.Controllers
         }
 
 
-        [HttpGet("ObterPorVendedorid/{Vendedorid}")]
+        [HttpGet("ObterPorVendedorId/{VendedorId}")]
         public IActionResult ObterPorVendedorId(int vendedorId)
         {
             var pedido = _repository.ObterPorVendedorId(vendedorId);
