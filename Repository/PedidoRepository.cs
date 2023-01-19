@@ -53,13 +53,6 @@ namespace SistemaVendas.Repository
           }
 
 
-          public Pedido ObterPorClienteId(int clienteId)                                
-          {
-            var pedido = _context.Pedidos.Find(clienteId);
-            return pedido;
-          }
-
-
           public List<ObterPedidoDTO> ObterPorVendedorId(int id)
           {
             var pedidos = _context.Pedidos.Where(x => x.VendedorId == id)
@@ -68,5 +61,16 @@ namespace SistemaVendas.Repository
 
             return pedidos;
         }
+
+
+        public List<ObterPedidoDTO> ObterPorClienteId(int id)
+        {
+            var pedidos = _context.Pedidos.Where(x => x.ClienteId == id)
+                                          .Select(x => new ObterPedidoDTO(x))
+                                          .ToList();
+
+            return pedidos;
+        }
+
     }
 }
