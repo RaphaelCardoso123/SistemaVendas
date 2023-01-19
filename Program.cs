@@ -11,6 +11,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrao"))
 //Add Implementações das Tabelas 
 builder.Services.AddScoped<VendedorRepository>();
 builder.Services.AddScoped<ClienteRepository>();
+builder.Services.AddScoped<ServicoRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
