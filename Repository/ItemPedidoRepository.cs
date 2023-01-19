@@ -25,5 +25,14 @@ namespace SistemaVendas.Repository
             return itemPedido;
 
           }
+
+
+          public ItemPedido ObterPorId(int id)
+        {
+            var itemPedido = _context.ItensPedido.Include(x => x.Pedido)
+                                                 .Include(x => x.Servico)
+                                                 .FirstOrDefault(x => x.Id == id);
+            return itemPedido;
+        }
     }
 }
