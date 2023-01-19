@@ -51,5 +51,12 @@ namespace SistemaVendas.Repository
             _context.Pedidos.Remove(pedido);
             _context.SaveChanges();
           }
+
+
+          public Pedido ObterPorClienteId(int clienteId)                                
+          {
+            var pedido = _context.Pedidos.Find(clienteId);
+            return pedido;
+          }
     }
 }
