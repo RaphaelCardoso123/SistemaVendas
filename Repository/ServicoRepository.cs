@@ -31,5 +31,15 @@ namespace SistemaVendas.Repository
                                                 .ToList();
             return servicos;
           }
+
+
+          public Servico AtualizarServico(Servico servico)
+                                                              
+          {
+            _context.Servicos.Update(servico);
+            _context.SaveChanges(); 
+
+            return servico;
+          }
     }
 }
