@@ -24,6 +24,13 @@ namespace SistemaVendas.Repository
           }
 
 
+          public Servico ObterPorId(int id)                                
+          {
+            var servico = _context.Servicos.Find(id);
+            return servico;
+          }
+
+
           public List<ObterServicoDTO> ObterPorNome(string nome)
           {
             var servicos = _context.Servicos.Where(x => x.Nome.Contains(nome))
@@ -43,11 +50,7 @@ namespace SistemaVendas.Repository
           }
 
 
-          public Servico ObterPorId(int id)                                
-          {
-            var servico = _context.Servicos.Find(id);
-            return servico;
-          }
+          
 
 
 
