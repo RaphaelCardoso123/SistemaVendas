@@ -44,5 +44,12 @@ namespace SistemaVendas.Repository
 
             return pedido;
           }
+
+
+          public void DeletarPedido(Pedido pedido)
+          {
+            _context.Pedidos.Remove(pedido);
+            _context.SaveChanges();
+          }
     }
 }
