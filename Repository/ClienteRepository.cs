@@ -28,5 +28,23 @@ namespace SistemaVendas.Repository
             var cliente = _context.Clientes.Find(id);
             return cliente;
         }
+
+        public List<ObterClienteDTO> ObterPorNome(string nome)
+          {
+            var clientes = _context.Clientes.Where(x => x.Nome.Contains(nome))
+                                                .Select(x => new ObterClienteDTO(x))
+                                                .ToList();
+            return clientes;
+          }
+
+
+          public Cliente AtualizarCliente(Cliente cliente)
+                                                              
+          {
+            _context.Clientes.Update(cliente);
+            _context.SaveChanges(); 
+
+            return cliente;
+          }
     }
 }
