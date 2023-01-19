@@ -25,6 +25,10 @@ namespace SistemaVendas.Repository
           }
 
 
-
+        public Pedido ObterPorId(int id)                                
+          {
+            var pedido = _context.Pedidos.Find(id);
+            return pedido;
+          }
     }
 }
