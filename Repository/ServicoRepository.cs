@@ -41,5 +41,25 @@ namespace SistemaVendas.Repository
 
             return servico;
           }
+
+
+          public Servico ObterPorId(int id)                                
+          {
+            var servico = _context.Servicos.Find(id);
+            return servico;
+          }
+
+
+
+
+
+
+
+
+
+
+
+
+          
     }
 }
