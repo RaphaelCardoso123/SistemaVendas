@@ -50,7 +50,11 @@ namespace SistemaVendas.Repository
           }
 
 
-          
+          public void DeletarServico(Servico servico)
+          {
+            _context.Servicos.Remove(servico);
+            _context.SaveChanges();
+          }
 
 
 
