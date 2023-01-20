@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SistemaVendas.Context;
 using SistemaVendas.Models;
 using SistemaVendas.Dto;
 using Microsoft.EntityFrameworkCore;
-
 
 namespace SistemaVendas.Repository
 {
@@ -71,6 +66,5 @@ namespace SistemaVendas.Repository
 
             return pedidos;
         }
-
     }
 }

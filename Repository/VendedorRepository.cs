@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using SistemaVendas.Context;
 using SistemaVendas.Models;
 using SistemaVendas.Dto;
@@ -43,7 +40,6 @@ namespace SistemaVendas.Repository
           }
 
 
-          //Precisa do SaveChanges pq está alterando/cadastrando o registro 
           public Vendedor AtualizarVendedor(Vendedor vendedor)
                                                               
           {
@@ -66,6 +62,5 @@ namespace SistemaVendas.Repository
             vendedor.Senha = dto.Senha;
             AtualizarVendedor(vendedor);
           }
-
     }
 }

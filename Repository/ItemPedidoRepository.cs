@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SistemaVendas.Context;
 using SistemaVendas.Models;
 using SistemaVendas.Dto;
@@ -50,7 +46,5 @@ namespace SistemaVendas.Repository
 
             return itemPedido;
           }
-
-          
     }
 }

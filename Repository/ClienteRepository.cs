@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using SistemaVendas.Context;
 using SistemaVendas.Models;
 using SistemaVendas.Dto;
@@ -17,17 +14,20 @@ namespace SistemaVendas.Repository
             _context = context;
         }
 
+
         public void Cadastrar(Cliente cliente)
         {
             _context.Clientes.Add(cliente);
             _context.SaveChanges(); 
         }
 
+
         public Cliente ObterPorId(int id)                                
         {
             var cliente = _context.Clientes.Find(id);
             return cliente;
         }
+
 
         public List<ObterClienteDTO> ObterPorNome(string nome)
           {

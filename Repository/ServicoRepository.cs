@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using SistemaVendas.Context;
 using SistemaVendas.Models;
 using SistemaVendas.Dto;
@@ -55,18 +52,5 @@ namespace SistemaVendas.Repository
             _context.Servicos.Remove(servico);
             _context.SaveChanges();
           }
-
-
-
-
-
-
-
-
-
-
-
-
-          
     }
 }
