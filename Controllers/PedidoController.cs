@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SistemaVendas.Repository;
 using SistemaVendas.Dto;
@@ -14,7 +10,6 @@ namespace sistemaVendas.Controllers
     [Route("[controller]")]
     public class PedidoController : ControllerBase
     {
-        
         private readonly PedidoRepository _repository;
         public PedidoController(PedidoRepository repository)
         {
@@ -29,6 +24,7 @@ namespace sistemaVendas.Controllers
             _repository.Cadastrar(pedido);
             return Ok(pedido);
         }
+
 
         [HttpGet("{id}")]
         public IActionResult ObterPorId(int id)
@@ -51,7 +47,6 @@ namespace sistemaVendas.Controllers
             var pedido = _repository.ObterPorClienteId(clienteId);
             return Ok(pedido);
         }
-
 
 
         [HttpGet("ObterPorVendedorId/{VendedorId}")]
@@ -95,6 +90,5 @@ namespace sistemaVendas.Controllers
                 return NotFound(new {Mensagem = "Pedido não encontrado!"});
             }
         }
-
     }
 }

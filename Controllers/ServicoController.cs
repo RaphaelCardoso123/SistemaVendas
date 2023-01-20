@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SistemaVendas.Repository;
 using SistemaVendas.Dto;
@@ -27,6 +23,7 @@ namespace SistemaVendas.Controllers
             _repository.Cadastrar(servico);
             return Ok(servico);
         }
+
 
         [HttpGet("ObterPorNome/{nome}")]
         public IActionResult ObterPorNome(string nome)
@@ -81,6 +78,5 @@ namespace SistemaVendas.Controllers
                 return NotFound(new {Mensagem = "Servico não encontrado"});
             }
         }
-
     }
 }

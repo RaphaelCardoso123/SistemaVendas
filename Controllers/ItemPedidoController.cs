@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SistemaVendas.Dto;
 using SistemaVendas.Models;
 using SistemaVendas.Repository;
@@ -44,7 +40,6 @@ namespace SistemaVendas.Controllers
                 return NotFound(new {Mensagem = "ItemPedido não encontrado!"});
             }
         }
-
 
 
         [HttpDelete("{id}")]
