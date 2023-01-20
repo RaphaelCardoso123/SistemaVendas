@@ -81,7 +81,7 @@ namespace sistemaVendas.Controllers
         }
 
 
-          [HttpDelete("{id}")]
+        [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
             var pedido = _repository.ObterPorId(id);
