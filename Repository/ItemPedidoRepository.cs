@@ -40,5 +40,17 @@ namespace SistemaVendas.Repository
             _context.ItensPedido.Remove(itemPedido);
             _context.SaveChanges();
         }
+
+
+        public ItemPedido AtualizarItemPedido(ItemPedido itemPedido)
+                                                              
+          {
+            _context.ItensPedido.Update(itemPedido);
+            _context.SaveChanges(); 
+
+            return itemPedido;
+          }
+
+          
     }
 }
