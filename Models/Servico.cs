@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using SistemaVendas.Dto;
 
 namespace SistemaVendas.Models
@@ -31,6 +27,5 @@ namespace SistemaVendas.Models
             Nome = dto.Nome;
             Descricao = dto.Descricao;
         }
-        
     }
 }
