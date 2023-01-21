@@ -7,7 +7,7 @@ namespace SistemaVendas.Repository
 {
     public class PedidoRepository
     {
-        private readonly VendasContext _context; 
+        private readonly VendasContext _context;
         public PedidoRepository(VendasContext context)
         {
             _context = context;
@@ -15,41 +15,41 @@ namespace SistemaVendas.Repository
 
 
         public Pedido Cadastrar(Pedido pedido)
-          {
+        {
             _context.Pedidos.Add(pedido);
-            _context.SaveChanges(); 
+            _context.SaveChanges();
             return pedido;
-          }
+        }
 
 
-        public Pedido ObterPorId(int id)                                
-          {
+        public Pedido ObterPorId(int id)
+        {
             var pedido = _context.Pedidos.Include(x => x.Vendedor)
                                          .Include(x => x.Cliente)
                                          .FirstOrDefault(x => x.Id == id);
             return pedido;
-          }
+        }
 
 
-          public Pedido AtualizarPedido(Pedido pedido)
-                                                              
-          {
+        public Pedido AtualizarPedido(Pedido pedido)
+
+        {
             _context.Pedidos.Update(pedido);
-            _context.SaveChanges(); 
+            _context.SaveChanges();
 
             return pedido;
-          }
+        }
 
 
-          public void DeletarPedido(Pedido pedido)
-          {
+        public void DeletarPedido(Pedido pedido)
+        {
             _context.Pedidos.Remove(pedido);
             _context.SaveChanges();
-          }
+        }
 
 
-          public List<ObterPedidoDTO> ObterPorVendedorId(int id)
-          {
+        public List<ObterPedidoDTO> ObterPorVendedorId(int id)
+        {
             var pedidos = _context.Pedidos.Where(x => x.VendedorId == id)
                                           .Select(x => new ObterPedidoDTO(x))
                                           .ToList();
