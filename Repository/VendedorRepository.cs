@@ -62,5 +62,11 @@ namespace SistemaVendas.Repository
             vendedor.Senha = dto.Senha;
             AtualizarVendedor(vendedor);
         }
+
+
+        public List<Vendedor> Listar()
+        {
+            return _context.Vendedores.ToList();
+        }
     }
 }

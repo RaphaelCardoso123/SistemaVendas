@@ -94,5 +94,13 @@ namespace SistemaVendas.Controllers
                 return NotFound(new {Mensagem = "Vendedor não encontrado"});
             }
         }
+
+
+        [HttpGet("Listar")]
+        public IActionResult Listar()
+        {
+            var vendedores  = _repository.Listar();
+            return Ok(vendedores);
+        }
     }
 }
