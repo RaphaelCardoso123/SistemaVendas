@@ -80,5 +80,9 @@ namespace SistemaVendas.Repository
         }
 
 
+        public List<Pedido> ListarPedidosCliente()
+        {
+            return _context.Pedidos.ToList();
+        }
     }
 }

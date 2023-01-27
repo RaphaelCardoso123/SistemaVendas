@@ -108,6 +108,11 @@ namespace sistemaVendas.Controllers
         }
         
 
-        
+        [HttpGet("ListarPedidosCliente/{ClienteId}")]
+        public IActionResult ListarPedidosCliente()
+        {
+            var pedidos = _repository.ListarPedidosCliente();
+            return Ok(pedidos);
+        }
     }
 }
