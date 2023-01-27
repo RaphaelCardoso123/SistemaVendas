@@ -98,21 +98,5 @@ namespace sistemaVendas.Controllers
             var pedidos = _repository.Listar();
             return Ok(pedidos);
         }
-
-
-        [HttpGet("ListarPedidosVendedor/{VendedorId}")]
-        public IActionResult ListarPedidosVendedor()
-        {
-            var pedidos = _repository.ListarPedidosVendedor();
-            return Ok(pedidos);
-        }
-        
-
-        [HttpGet("ListarPedidosCliente/{ClienteId}")]
-        public IActionResult ListarPedidosCliente()
-        {
-            var pedidos = _repository.ListarPedidosCliente();
-            return Ok(pedidos);
-        }
     }
 }
